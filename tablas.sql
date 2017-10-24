@@ -1,0 +1,13 @@
+CREATE OR REPLACE PROCEDURE TABLA3
+IS
+BEGIN
+EXECUTE IMMEDIATE
+  'create table escuela (
+  nombre VARCHAR (100),
+  pais   VARCHAR (100),
+  fecha_aparicion DATE,
+  constraint pk_escue PRIMARY KEY (nombre)
+  )';
+EXCEPTION WHEN OTHERS THEN
+RAISE_APPLICATION_ERROR(-20010,'HA OCURRIDO UN ERROR');
+END;
